@@ -1,0 +1,16 @@
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\bin\Debug\Caffee Poject.exe.config
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\bin\Debug\Caffee Poject.exe
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\bin\Debug\Caffee Poject.pdb
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee Poject.csproj.AssemblyReference.cache
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee_Poject.Anasayfa.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee_Poject.Anasayfapersonel.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee_Poject.Form1.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee_Poject.Müşteriler.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee_Poject.Properties.Resources.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee_Poject.Siparişler.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee_Poject.Ürünler.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee_Poject.Ürünlerpersonel.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee Poject.csproj.GenerateResource.cache
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee Poject.csproj.CoreCompileInputs.cache
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee Poject.exe
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\Caffee Poject\Caffee Poject\obj\Debug\Caffee Poject.pdb
