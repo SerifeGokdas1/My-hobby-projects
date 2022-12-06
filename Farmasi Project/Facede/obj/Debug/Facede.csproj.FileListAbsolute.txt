@@ -1,0 +1,9 @@
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\bin\Debug\Facede.dll
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\bin\Debug\Facede.pdb
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\bin\Debug\Entitiy.dll
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\bin\Debug\Entitiy.pdb
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\obj\Debug\Facede.csproj.AssemblyReference.cache
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\obj\Debug\Facede.csproj.CoreCompileInputs.cache
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\obj\Debug\Facede.csproj.CopyComplete
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\obj\Debug\Facede.dll
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Facede\obj\Debug\Facede.pdb

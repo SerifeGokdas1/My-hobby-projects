@@ -1,0 +1,6 @@
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Entitiy\bin\Debug\Entitiy.dll
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Entitiy\bin\Debug\Entitiy.pdb
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Entitiy\obj\Debug\Entity.csproj.AssemblyReference.cache
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Entitiy\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Entitiy\obj\Debug\Entitiy.dll
+C:\Users\Şerife GÖKDAŞ\Desktop\c#\winform\FarmasiProducts\Entitiy\obj\Debug\Entitiy.pdb
