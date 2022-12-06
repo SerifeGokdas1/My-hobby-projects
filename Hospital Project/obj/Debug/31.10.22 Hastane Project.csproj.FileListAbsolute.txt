@@ -1,0 +1,15 @@
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\bin\Debug\31.10.22 Hastane Project.exe.config
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\bin\Debug\31.10.22 Hastane Project.exe
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\bin\Debug\31.10.22 Hastane Project.pdb
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\31.10.22 Hastane Project.csproj.AssemblyReference.cache
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\_31._10._22_Hastane_Project.Anasayfa.resources
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\_31._10._22_Hastane_Project.Doktorlar.resources
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\_31._10._22_Hastane_Project.Form1.resources
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\_31._10._22_Hastane_Project.Hastalar.resources
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\_31._10._22_Hastane_Project.Poliklinikler.resources
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\_31._10._22_Hastane_Project.Properties.Resources.resources
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\_31._10._22_Hastane_Project.Rapor.resources
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\31.10.22 Hastane Project.csproj.GenerateResource.cache
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\31.10.22 Hastane Project.csproj.CoreCompileInputs.cache
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\31.10.22 Hastane Project.exe
+C:\Users\serife.gokdas\Desktop\şerife\WİNFORMmasa\31.10.22 Hastane Project\obj\Debug\31.10.22 Hastane Project.pdb
