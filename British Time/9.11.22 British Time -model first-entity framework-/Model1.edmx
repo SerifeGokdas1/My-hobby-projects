@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="TeachersSet" EntityType="Model1.Store.TeachersSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudentsSet" EntityType="Model1.Store.StudentsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StaffsSet" EntityType="Model1.Store.StaffsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LessonsSet" EntityType="Model1.Store.LessonsSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TeachersStudents" Association="Model1.Store.TeachersStudents">
+      <End Role="Teachers" EntitySet="TeachersSet" />
+      <End Role="Students" EntitySet="StudentsSet" />
+    </AssociationSet>
+    <AssociationSet Name="StudentsLessons" Association="Model1.Store.StudentsLessons">
+      <End Role="Students" EntitySet="StudentsSet" />
+      <End Role="Lessons" EntitySet="LessonsSet" />
+    </AssociationSet>
+    <AssociationSet Name="TeachersLessons" Association="Model1.Store.TeachersLessons">
+      <End Role="Teachers" EntitySet="TeachersSet" />
+      <End Role="Lessons" EntitySet="LessonsSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TeachersSet">
+    <Key>
+      <PropertyRef Name="TeacherNo" />
+    </Key>
+    <Property Name="TeacherNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeacherName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TeacherPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TeacherMail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TeacherBranch" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentsSet">
+    <Key>
+      <PropertyRef Name="StudentNo" />
+    </Key>
+    <Property Name="StudentNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StudentPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StudentMail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TeachersTeacherNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StaffsSet">
+    <Key>
+      <PropertyRef Name="StaffNo" />
+    </Key>
+    <Property Name="StaffNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StaffMail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StaffPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StaffPhone" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LessonsSet">
+    <Key>
+      <PropertyRef Name="LessonNo" />
+    </Key>
+    <Property Name="LessonNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Speech" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BusinessEnglish" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YDSCourse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ToeflCourse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IeltsCourse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StudentsStudentNo" Type="int" Nullable="false" />
+    <Property Name="TeachersTeacherNo" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="TeachersStudents">
+    <End Role="Teachers" Type="Model1.Store.TeachersSet" Multiplicity="1" />
+    <End Role="Students" Type="Model1.Store.StudentsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="TeacherNo" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="TeachersTeacherNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentsLessons">
+    <End Role="Students" Type="Model1.Store.StudentsSet" Multiplicity="1" />
+    <End Role="Lessons" Type="Model1.Store.LessonsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="StudentNo" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="StudentsStudentNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TeachersLessons">
+    <End Role="Teachers" Type="Model1.Store.TeachersSet" Multiplicity="1" />
+    <End Role="Lessons" Type="Model1.Store.LessonsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="TeacherNo" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="TeachersTeacherNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TeachersSet" EntityType="Model1.Teachers" />
+          <EntitySet Name="StudentsSet" EntityType="Model1.Students" />
+          <EntitySet Name="StaffsSet" EntityType="Model1.Staffs" />
+          <EntitySet Name="LessonsSet" EntityType="Model1.Lessons" />
+          <AssociationSet Name="TeachersStudents" Association="Model1.TeachersStudents">
+            <End Role="Teachers" EntitySet="TeachersSet" />
+            <End Role="Students" EntitySet="StudentsSet" />
+          </AssociationSet>
+          <AssociationSet Name="StudentsLessons" Association="Model1.StudentsLessons">
+            <End Role="Students" EntitySet="StudentsSet" />
+            <End Role="Lessons" EntitySet="LessonsSet" />
+          </AssociationSet>
+          <AssociationSet Name="TeachersLessons" Association="Model1.TeachersLessons">
+            <End Role="Teachers" EntitySet="TeachersSet" />
+            <End Role="Lessons" EntitySet="LessonsSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Teachers">
+          <Key>
+            <PropertyRef Name="TeacherNo" />
+          </Key>
+          <Property Name="TeacherNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeacherName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TeacherPhone" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TeacherMail" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TeacherBranch" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Students" Relationship="Model1.TeachersStudents" FromRole="Teachers" ToRole="Students" />
+          <NavigationProperty Name="Lessons" Relationship="Model1.TeachersLessons" FromRole="Teachers" ToRole="Lessons" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="StudentNo" />
+          </Key>
+          <Property Name="StudentNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StudentPhone" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StudentMail" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Teachers" Relationship="Model1.TeachersStudents" FromRole="Students" ToRole="Teachers" />
+          <Property Name="TeachersTeacherNo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Lessons" Relationship="Model1.StudentsLessons" FromRole="Students" ToRole="Lessons" />
+        </EntityType>
+        <EntityType Name="Staffs">
+          <Key>
+            <PropertyRef Name="StaffNo" />
+          </Key>
+          <Property Name="StaffNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StaffMail" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StaffPassword" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StaffPhone" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lessons">
+          <Key>
+            <PropertyRef Name="LessonNo" />
+          </Key>
+          <Property Name="LessonNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Speech" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BusinessEnglish" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="YDSCourse" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ToeflCourse" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IeltsCourse" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Students" Relationship="Model1.StudentsLessons" FromRole="Lessons" ToRole="Students" />
+          <Property Name="StudentsStudentNo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Teachers" Relationship="Model1.TeachersLessons" FromRole="Lessons" ToRole="Teachers" />
+          <Property Name="TeachersTeacherNo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="TeachersStudents">
+          <End Type="Model1.Teachers" Role="Teachers" Multiplicity="1" />
+          <End Type="Model1.Students" Role="Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="TeacherNo" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="TeachersTeacherNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StudentsLessons">
+          <End Type="Model1.Students" Role="Students" Multiplicity="1" />
+          <End Type="Model1.Lessons" Role="Lessons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentNo" />
+            </Principal>
+            <Dependent Role="Lessons">
+              <PropertyRef Name="StudentsStudentNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TeachersLessons">
+          <End Type="Model1.Teachers" Role="Teachers" Multiplicity="1" />
+          <End Type="Model1.Lessons" Role="Lessons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="TeacherNo" />
+            </Principal>
+            <Dependent Role="Lessons">
+              <PropertyRef Name="TeachersTeacherNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="TeachersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Teachers)">
+        <MappingFragment StoreEntitySet="TeachersSet">
+          <ScalarProperty Name="TeacherNo" ColumnName="TeacherNo" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+          <ScalarProperty Name="TeacherPhone" ColumnName="TeacherPhone" />
+          <ScalarProperty Name="TeacherMail" ColumnName="TeacherMail" />
+          <ScalarProperty Name="TeacherBranch" ColumnName="TeacherBranch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Students)">
+        <MappingFragment StoreEntitySet="StudentsSet">
+          <ScalarProperty Name="StudentNo" ColumnName="StudentNo" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="StudentPhone" ColumnName="StudentPhone" />
+          <ScalarProperty Name="StudentMail" ColumnName="StudentMail" />
+          <ScalarProperty Name="TeachersTeacherNo" ColumnName="TeachersTeacherNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaffsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Staffs)">
+        <MappingFragment StoreEntitySet="StaffsSet">
+          <ScalarProperty Name="StaffNo" ColumnName="StaffNo" />
+          <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+          <ScalarProperty Name="StaffMail" ColumnName="StaffMail" />
+          <ScalarProperty Name="StaffPassword" ColumnName="StaffPassword" />
+          <ScalarProperty Name="StaffPhone" ColumnName="StaffPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LessonsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Lessons)">
+        <MappingFragment StoreEntitySet="LessonsSet">
+          <ScalarProperty Name="LessonNo" ColumnName="LessonNo" />
+          <ScalarProperty Name="Speech" ColumnName="Speech" />
+          <ScalarProperty Name="BusinessEnglish" ColumnName="BusinessEnglish" />
+          <ScalarProperty Name="YDSCourse" ColumnName="YDSCourse" />
+          <ScalarProperty Name="ToeflCourse" ColumnName="ToeflCourse" />
+          <ScalarProperty Name="IeltsCourse" ColumnName="IeltsCourse" />
+          <ScalarProperty Name="StudentsStudentNo" ColumnName="StudentsStudentNo" />
+          <ScalarProperty Name="TeachersTeacherNo" ColumnName="TeachersTeacherNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

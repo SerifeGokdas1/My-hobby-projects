@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="TeachersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Teachers)">
+        <MappingFragment StoreEntitySet="TeachersSet">
+          <ScalarProperty Name="TeacherNo" ColumnName="TeacherNo" />
+          <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+          <ScalarProperty Name="TeacherPhone" ColumnName="TeacherPhone" />
+          <ScalarProperty Name="TeacherMail" ColumnName="TeacherMail" />
+          <ScalarProperty Name="TeacherBranch" ColumnName="TeacherBranch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Students)">
+        <MappingFragment StoreEntitySet="StudentsSet">
+          <ScalarProperty Name="StudentNo" ColumnName="StudentNo" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="StudentPhone" ColumnName="StudentPhone" />
+          <ScalarProperty Name="StudentMail" ColumnName="StudentMail" />
+          <ScalarProperty Name="TeachersTeacherNo" ColumnName="TeachersTeacherNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaffsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Staffs)">
+        <MappingFragment StoreEntitySet="StaffsSet">
+          <ScalarProperty Name="StaffNo" ColumnName="StaffNo" />
+          <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+          <ScalarProperty Name="StaffMail" ColumnName="StaffMail" />
+          <ScalarProperty Name="StaffPassword" ColumnName="StaffPassword" />
+          <ScalarProperty Name="StaffPhone" ColumnName="StaffPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LessonsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Lessons)">
+        <MappingFragment StoreEntitySet="LessonsSet">
+          <ScalarProperty Name="LessonNo" ColumnName="LessonNo" />
+          <ScalarProperty Name="Speech" ColumnName="Speech" />
+          <ScalarProperty Name="BusinessEnglish" ColumnName="BusinessEnglish" />
+          <ScalarProperty Name="YDSCourse" ColumnName="YDSCourse" />
+          <ScalarProperty Name="ToeflCourse" ColumnName="ToeflCourse" />
+          <ScalarProperty Name="IeltsCourse" ColumnName="IeltsCourse" />
+          <ScalarProperty Name="StudentsStudentNo" ColumnName="StudentsStudentNo" />
+          <ScalarProperty Name="TeachersTeacherNo" ColumnName="TeachersTeacherNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

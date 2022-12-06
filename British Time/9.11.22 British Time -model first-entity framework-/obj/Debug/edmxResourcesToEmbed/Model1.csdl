@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TeachersSet" EntityType="Model1.Teachers" />
+    <EntitySet Name="StudentsSet" EntityType="Model1.Students" />
+    <EntitySet Name="StaffsSet" EntityType="Model1.Staffs" />
+    <EntitySet Name="LessonsSet" EntityType="Model1.Lessons" />
+    <AssociationSet Name="TeachersStudents" Association="Model1.TeachersStudents">
+      <End Role="Teachers" EntitySet="TeachersSet" />
+      <End Role="Students" EntitySet="StudentsSet" />
+    </AssociationSet>
+    <AssociationSet Name="StudentsLessons" Association="Model1.StudentsLessons">
+      <End Role="Students" EntitySet="StudentsSet" />
+      <End Role="Lessons" EntitySet="LessonsSet" />
+    </AssociationSet>
+    <AssociationSet Name="TeachersLessons" Association="Model1.TeachersLessons">
+      <End Role="Teachers" EntitySet="TeachersSet" />
+      <End Role="Lessons" EntitySet="LessonsSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Teachers">
+    <Key>
+      <PropertyRef Name="TeacherNo" />
+    </Key>
+    <Property Name="TeacherNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeacherName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="TeacherPhone" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="TeacherMail" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="TeacherBranch" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Students" Relationship="Model1.TeachersStudents" FromRole="Teachers" ToRole="Students" />
+    <NavigationProperty Name="Lessons" Relationship="Model1.TeachersLessons" FromRole="Teachers" ToRole="Lessons" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="StudentNo" />
+    </Key>
+    <Property Name="StudentNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="StudentPhone" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="StudentMail" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Teachers" Relationship="Model1.TeachersStudents" FromRole="Students" ToRole="Teachers" />
+    <Property Name="TeachersTeacherNo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Lessons" Relationship="Model1.StudentsLessons" FromRole="Students" ToRole="Lessons" />
+  </EntityType>
+  <EntityType Name="Staffs">
+    <Key>
+      <PropertyRef Name="StaffNo" />
+    </Key>
+    <Property Name="StaffNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StaffName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="StaffMail" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="StaffPassword" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="StaffPhone" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lessons">
+    <Key>
+      <PropertyRef Name="LessonNo" />
+    </Key>
+    <Property Name="LessonNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Speech" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="BusinessEnglish" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="YDSCourse" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ToeflCourse" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="IeltsCourse" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Students" Relationship="Model1.StudentsLessons" FromRole="Lessons" ToRole="Students" />
+    <Property Name="StudentsStudentNo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Teachers" Relationship="Model1.TeachersLessons" FromRole="Lessons" ToRole="Teachers" />
+    <Property Name="TeachersTeacherNo" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="TeachersStudents">
+    <End Type="Model1.Teachers" Role="Teachers" Multiplicity="1" />
+    <End Type="Model1.Students" Role="Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="TeacherNo" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="TeachersTeacherNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentsLessons">
+    <End Type="Model1.Students" Role="Students" Multiplicity="1" />
+    <End Type="Model1.Lessons" Role="Lessons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="StudentNo" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="StudentsStudentNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TeachersLessons">
+    <End Type="Model1.Teachers" Role="Teachers" Multiplicity="1" />
+    <End Type="Model1.Lessons" Role="Lessons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="TeacherNo" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="TeachersTeacherNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

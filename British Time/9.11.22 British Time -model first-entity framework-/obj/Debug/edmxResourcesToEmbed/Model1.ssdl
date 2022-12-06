@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="TeachersSet" EntityType="Model1.Store.TeachersSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudentsSet" EntityType="Model1.Store.StudentsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StaffsSet" EntityType="Model1.Store.StaffsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LessonsSet" EntityType="Model1.Store.LessonsSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TeachersStudents" Association="Model1.Store.TeachersStudents">
+      <End Role="Teachers" EntitySet="TeachersSet" />
+      <End Role="Students" EntitySet="StudentsSet" />
+    </AssociationSet>
+    <AssociationSet Name="StudentsLessons" Association="Model1.Store.StudentsLessons">
+      <End Role="Students" EntitySet="StudentsSet" />
+      <End Role="Lessons" EntitySet="LessonsSet" />
+    </AssociationSet>
+    <AssociationSet Name="TeachersLessons" Association="Model1.Store.TeachersLessons">
+      <End Role="Teachers" EntitySet="TeachersSet" />
+      <End Role="Lessons" EntitySet="LessonsSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TeachersSet">
+    <Key>
+      <PropertyRef Name="TeacherNo" />
+    </Key>
+    <Property Name="TeacherNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeacherName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TeacherPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TeacherMail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TeacherBranch" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentsSet">
+    <Key>
+      <PropertyRef Name="StudentNo" />
+    </Key>
+    <Property Name="StudentNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StudentPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StudentMail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TeachersTeacherNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StaffsSet">
+    <Key>
+      <PropertyRef Name="StaffNo" />
+    </Key>
+    <Property Name="StaffNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StaffMail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StaffPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StaffPhone" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LessonsSet">
+    <Key>
+      <PropertyRef Name="LessonNo" />
+    </Key>
+    <Property Name="LessonNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Speech" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BusinessEnglish" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YDSCourse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ToeflCourse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IeltsCourse" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StudentsStudentNo" Type="int" Nullable="false" />
+    <Property Name="TeachersTeacherNo" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="TeachersStudents">
+    <End Role="Teachers" Type="Model1.Store.TeachersSet" Multiplicity="1" />
+    <End Role="Students" Type="Model1.Store.StudentsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="TeacherNo" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="TeachersTeacherNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentsLessons">
+    <End Role="Students" Type="Model1.Store.StudentsSet" Multiplicity="1" />
+    <End Role="Lessons" Type="Model1.Store.LessonsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="StudentNo" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="StudentsStudentNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TeachersLessons">
+    <End Role="Teachers" Type="Model1.Store.TeachersSet" Multiplicity="1" />
+    <End Role="Lessons" Type="Model1.Store.LessonsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="TeacherNo" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="TeachersTeacherNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,19 @@
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\bin\Debug\9.11.22 British Time -model first-entity framework-.exe.config
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\bin\Debug\9.11.22 British Time -model first-entity framework-.exe
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\bin\Debug\9.11.22 British Time -model first-entity framework-.pdb
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\bin\Debug\EntityFramework.dll
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\bin\Debug\EntityFramework.xml
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\9.11.22 British Time -model first-entity framework-.csproj.AssemblyReference.cache
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\_9._11._22_British_Time__model_first_entity_framework_.Form1.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\_9._11._22_British_Time__model_first_entity_framework_.HomePage.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\_9._11._22_British_Time__model_first_entity_framework_.Lessonss.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\_9._11._22_British_Time__model_first_entity_framework_.Properties.Resources.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\_9._11._22_British_Time__model_first_entity_framework_.Studentss.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\_9._11._22_British_Time__model_first_entity_framework_.Teacherss.resources
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\9.11.22 British Time -model first-entity framework-.csproj.GenerateResource.cache
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\9.11.22 British Time -model first-entity framework-.csproj.CoreCompileInputs.cache
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\9.11.22 British Time -model first-entity framework-.csproj.CopyComplete
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\9.11.22 British Time -model first-entity framework-.exe
+C:\Users\serife.gokdas\Desktop\şerife\Projeler\9.11.22 British Time\9.11.22 British Time -model first-entity framework-\obj\Debug\9.11.22 British Time -model first-entity framework-.pdb
