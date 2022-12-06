@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TransportModelStoreContainer" CdmEntityContainer="TransportEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TransportModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerNameSurname" ColumnName="CustomerNameSurname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="ShipmentId" ColumnName="ShipmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="TransportModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+          <ScalarProperty Name="EmployeePassword" ColumnName="EmployeePassword" />
+          <ScalarProperty Name="EmployeeMail" ColumnName="EmployeeMail" />
+          <ScalarProperty Name="EmployeePhone" ColumnName="EmployeePhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shipments">
+      <EntityTypeMapping TypeName="TransportModel.Shipment">
+        <MappingFragment StoreEntitySet="Shipments">
+          <ScalarProperty Name="ShipmentId" ColumnName="ShipmentId" />
+          <ScalarProperty Name="ShipmentName" ColumnName="ShipmentName" />
+          <ScalarProperty Name="ShippingConsigneeAddress" ColumnName="ShippingConsigneeAddress" />
+          <ScalarProperty Name="ShippingSenderAddress" ColumnName="ShippingSenderAddress" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="DistanceAmount" ColumnName="DistanceAmount" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="TransportModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicles">
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="VehicleCapacity" ColumnName="VehicleCapacity" />
+          <ScalarProperty Name="VehicleDriver" ColumnName="VehicleDriver" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CAdd" FunctionName="TransportModel.Store.CAdd" />
+    <FunctionImportMapping FunctionImportName="CDelete" FunctionName="TransportModel.Store.CDelete" />
+    <FunctionImportMapping FunctionImportName="CList" FunctionName="TransportModel.Store.CList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TransportModel.CList_Result">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerNameSurname" ColumnName="CustomerNameSurname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="ShipmentId" ColumnName="ShipmentId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CUpdate" FunctionName="TransportModel.Store.CUpdate" />
+    <FunctionImportMapping FunctionImportName="EAdd" FunctionName="TransportModel.Store.EAdd" />
+    <FunctionImportMapping FunctionImportName="EDelete" FunctionName="TransportModel.Store.EDelete" />
+    <FunctionImportMapping FunctionImportName="EList" FunctionName="TransportModel.Store.EList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TransportModel.EList_Result">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+          <ScalarProperty Name="EmployeePassword" ColumnName="EmployeePassword" />
+          <ScalarProperty Name="EmployeeMail" ColumnName="EmployeeMail" />
+          <ScalarProperty Name="EmployeePhone" ColumnName="EmployeePhone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="EUpdate" FunctionName="TransportModel.Store.EUpdate" />
+    <FunctionImportMapping FunctionImportName="SAdd" FunctionName="TransportModel.Store.SAdd" />
+    <FunctionImportMapping FunctionImportName="SDelete" FunctionName="TransportModel.Store.SDelete" />
+    <FunctionImportMapping FunctionImportName="SList" FunctionName="TransportModel.Store.SList" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="TransportModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="TransportModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="TransportModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="TransportModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TransportModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="TransportModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TransportModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="TransportModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="TransportModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SUpdate" FunctionName="TransportModel.Store.SUpdate" />
+    <FunctionImportMapping FunctionImportName="VAdd" FunctionName="TransportModel.Store.VAdd" />
+    <FunctionImportMapping FunctionImportName="VDelete" FunctionName="TransportModel.Store.VDelete" />
+    <FunctionImportMapping FunctionImportName="VList" FunctionName="TransportModel.Store.VList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TransportModel.VList_Result">
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="VehicleCapacity" ColumnName="VehicleCapacity" />
+          <ScalarProperty Name="VehicleDriver" ColumnName="VehicleDriver" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VUpdate" FunctionName="TransportModel.Store.VUpdate" />
+  </EntityContainerMapping>
+</Mapping>

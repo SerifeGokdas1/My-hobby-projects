@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TransportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerNameSurname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentMethod" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipmentId" Type="int" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeSurname" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeePassword" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeMail" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeePhone" Type="int" />
+  </EntityType>
+  <EntityType Name="Shipments">
+    <Key>
+      <PropertyRef Name="ShipmentId" />
+    </Key>
+    <Property Name="ShipmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShipmentName" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingConsigneeAddress" Type="varchar" MaxLength="50" />
+    <Property Name="ShippingSenderAddress" Type="varchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="DistanceAmount" Type="int" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="VehicleId" Type="int" />
+  </EntityType>
+  <EntityType Name="Vehicles">
+    <Key>
+      <PropertyRef Name="VehicleId" />
+    </Key>
+    <Property Name="VehicleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleCapacity" Type="int" />
+    <Property Name="VehicleDriver" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Customers_Shipment">
+    <End Role="Shipments" Type="Self.Shipments" Multiplicity="0..1" />
+    <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shipments">
+        <PropertyRef Name="ShipmentId" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="ShipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shipment_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Shipments" Type="Self.Shipments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Shipments">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shipment_Vehicles">
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="0..1" />
+    <End Role="Shipments" Type="Self.Shipments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicles">
+        <PropertyRef Name="VehicleId" />
+      </Principal>
+      <Dependent Role="Shipments">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerNameSurname" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="text" Mode="In" />
+    <Parameter Name="Phone" Type="varchar" Mode="In" />
+    <Parameter Name="Mail" Type="varchar" Mode="In" />
+    <Parameter Name="PaymentMethod" Type="varchar" Mode="In" />
+    <Parameter Name="ShipmentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="CUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerId" Type="int" Mode="In" />
+    <Parameter Name="CustomerNameSurname" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="text" Mode="In" />
+    <Parameter Name="Phone" Type="varchar" Mode="In" />
+    <Parameter Name="Mail" Type="varchar" Mode="In" />
+    <Parameter Name="PaymentMethod" Type="varchar" Mode="In" />
+    <Parameter Name="ShipmentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="EAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeName" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeeSurname" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeePassword" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeeMail" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeePhone" Type="int" Mode="In" />
+  </Function>
+  <Function Name="EDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="EList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="EUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="EmployeeName" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeeSurname" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeePassword" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeeMail" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeePhone" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="SAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ShipmentName" Type="varchar" Mode="In" />
+    <Parameter Name="ShippingConsigneeAddress" Type="varchar" Mode="In" />
+    <Parameter Name="ShippingSenderAddress" Type="varchar" Mode="In" />
+    <Parameter Name="Distance" Type="int" Mode="In" />
+    <Parameter Name="DistanceAmount" Type="int" Mode="In" />
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="VehicleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ShipmentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ShipmentId" Type="int" Mode="In" />
+    <Parameter Name="ShipmentName" Type="varchar" Mode="In" />
+    <Parameter Name="ShippingConsigneeAddress" Type="varchar" Mode="In" />
+    <Parameter Name="ShippingSenderAddress" Type="varchar" Mode="In" />
+    <Parameter Name="Distance" Type="int" Mode="In" />
+    <Parameter Name="DistanceAmount" Type="int" Mode="In" />
+    <Parameter Name="EmployeeId" Type="int" Mode="In" />
+    <Parameter Name="VehicleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VehicleType" Type="varchar" Mode="In" />
+    <Parameter Name="VehicleCapacity" Type="int" Mode="In" />
+    <Parameter Name="VehicleDriver" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="VDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VehicleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VehicleId" Type="int" Mode="In" />
+    <Parameter Name="VehicleType" Type="varchar" Mode="In" />
+    <Parameter Name="VehicleCapacity" Type="int" Mode="In" />
+    <Parameter Name="VehicleDriver" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="TransportModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shipments" EntityType="Self.Shipments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Customers_Shipment" Association="Self.FK_Customers_Shipment">
+      <End Role="Shipments" EntitySet="Shipments" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shipment_Employees" Association="Self.FK_Shipment_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Shipments" EntitySet="Shipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shipment_Vehicles" Association="Self.FK_Shipment_Vehicles">
+      <End Role="Vehicles" EntitySet="Vehicles" />
+      <End Role="Shipments" EntitySet="Shipments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
